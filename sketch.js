@@ -73,7 +73,7 @@ function draw() {
  
   if(gamestate === "PLAY"){
      if(keyDown("space") && trex.y>=160) {
-    trex.velocityY = -12;
+    trex.velocityY = -15;
   }
     
     score = score + Math.round(getFrameRate()/60);
@@ -131,7 +131,7 @@ function spawnClouds() {
 function spawnObstacles() {
   if(frameCount % 60 === 0) {
     var obstacle = createSprite(600,165,10,40);
-    obstacle.velocityX = -4;
+    obstacle.velocityX = -(5+score/100);
     
     //generate random obstacles
     var rand = Math.round(random(1,6));

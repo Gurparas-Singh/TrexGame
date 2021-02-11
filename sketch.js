@@ -34,13 +34,11 @@ function setup() {
   trex.addImage("collided",trex_collided);
   trex.setAnimation("running");
   trex.scale = 0.5;
-  
-  
+  trex.setCollider("circle",0,0,35);
   
   ground = createSprite(200,180,400,20);
   ground.addImage("ground",groundImage);
   ground.x = ground.width /2;
-  ground.velocityX = -4;
   
   invisibleGround = createSprite(200,190,400,10);
   invisibleGround.visible = false;
@@ -64,6 +62,8 @@ function setup() {
 
 function draw() {
   background(280);
+  
+    ground.velocityX = -(5+score/100);
   
    trex.collide(invisibleGround);
   
